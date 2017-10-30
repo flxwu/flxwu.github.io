@@ -10,11 +10,10 @@ comments: false
 
 #### I am currently a high school student at <a href="http://www.hansenberg.de"> Internatsschule Schloss Hansenberg</a>, Germany, and I love programming and sport.
 
-## What I do
-In my freetime, I mainly do programming, sport and freelancing.
 <img align="right" src="/assets/img/pb.jpg" >
 
-
+## What I do
+In my freetime, I mainly do programming, sport and freelancing.
 
 Currently, I am diving into the deep world of Android programming. Java is my main programming language, but I do also master Python and a bit of Kotlin, C++ and C#.
 
