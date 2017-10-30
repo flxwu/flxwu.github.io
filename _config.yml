@@ -1,7 +1,7 @@
 # Site
 title:              David Wu's Homepage
-bio:                'I am currently a high school student at Internatsschule Schloss Hansenberg, Germany. In my freetime, I do programming and sport.'
-description:        "This is my Github page."
+bio:                'High school student and programming enthusiast'
+description:        "This is David Wu's Github page."
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/D_logo.png'
