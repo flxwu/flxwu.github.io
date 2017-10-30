@@ -4,8 +4,8 @@ bio:                'I am currently a high school student at Internatsschule Sch
 description:        "This is my Github page."
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/logo.png'
-background:         'assets/img/placeholder-big.jpg'
+logo:               'assets/img/D_logo.png'
+background:         'assets/img/background.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://pl4gue.github.io
@@ -30,14 +30,14 @@ disqus_shortname:   taylantatli
 
 # Social
 # if you don't have any of social below, comment the line.
-#google:
-  #plus:            #username
+google:
+  plus:             'David Wu'
   #analytics:
   #verify:
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
+email:              david10608@gmail.com
 twitter:            pl4gue_dwu
 #facebook:           -
 github-url:         Pl4gue
@@ -47,7 +47,7 @@ github-url:         Pl4gue
 #instagram:          username
 #lastfm:            username
 #tumblr:            username
-#medium:            '@username'
+medium:            '@david10608'
 #pinterest:         username
 #foursquare:        username
 #steam:              username
