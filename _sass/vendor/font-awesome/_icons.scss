@@ -600,9 +600,6 @@
 .#{$fa-css-prefix}-subway:before { content: $fa-var-subway; }
 .#{$fa-css-prefix}-medium:before { content: $fa-var-medium; }
 .#{$fa-css-prefix}-upwork:before {
-    background-image: url('/assets/img/upwork.png');
-    background-size: 38.5667px 30px;
-    display: inline-block;
     width: 38.5667px;
     height: 30px;
     content:url('/assets/img/upwork.png');}
