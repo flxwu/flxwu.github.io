@@ -599,6 +599,7 @@
 .#{$fa-css-prefix}-train:before { content: $fa-var-train; }
 .#{$fa-css-prefix}-subway:before { content: $fa-var-subway; }
 .#{$fa-css-prefix}-medium:before { content: $fa-var-medium; }
+.#{%fa-css-prefix}-upwork:before { content: url('/assets/img/upwork.svg')}
 .#{$fa-css-prefix}-yc:before,
 .#{$fa-css-prefix}-y-combinator:before { content: $fa-var-y-combinator; }
 .#{$fa-css-prefix}-optin-monster:before { content: $fa-var-optin-monster; }
