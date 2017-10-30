@@ -599,7 +599,13 @@
 .#{$fa-css-prefix}-train:before { content: $fa-var-train; }
 .#{$fa-css-prefix}-subway:before { content: $fa-var-subway; }
 .#{$fa-css-prefix}-medium:before { content: $fa-var-medium; }
-.#{$fa-css-prefix}-upwork:before { content: url('/assets/img/upwork.png')}
+.#{$fa-css-prefix}-upwork:before {
+    background-image: url('/assets/img/upwork.png');
+    background-size: 38.5667px 30px;
+    display: inline-block;
+    width: 38.5667px;
+    height: 30px;
+    content:"";}
 .#{$fa-css-prefix}-yc:before,
 .#{$fa-css-prefix}-y-combinator:before { content: $fa-var-y-combinator; }
 .#{$fa-css-prefix}-optin-monster:before { content: $fa-var-optin-monster; }
