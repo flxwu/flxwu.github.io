@@ -12,7 +12,7 @@ comments: false
 
 ## What I do
 In my freetime, I mainly do programming, sport and freelancing.
-<div> <img align="right" src="/assets/img/pb.jpg" height="5%" width="5%"> </div>
+<img align="right" src="/assets/img/pb.jpg" >
 
 
 
