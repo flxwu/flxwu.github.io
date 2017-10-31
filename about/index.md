@@ -10,7 +10,7 @@ comments: false
 
 #### I am currently a high school student at <a href="http://www.hansenberg.de"> Internatsschule Schloss Hansenberg</a>, Germany, and I love programming and sport.
 
-<img align="right" src="/assets/img/pb.jpg" >
+<img align="right" hspace="50" src="/assets/img/pb.jpg" >
 
 ## What I do
 In my freetime, I mainly do programming, sport and freelancing.
