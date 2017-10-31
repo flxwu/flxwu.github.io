@@ -17,6 +17,10 @@
 	margin: 10px;
 	@extend %btnextend;
 }
+.footer {
+	display: inline-block;
+  vertical-align: top;
+}
 .footer-left {
 	color: white;
 	text-align: left;
