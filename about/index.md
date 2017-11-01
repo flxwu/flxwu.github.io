@@ -6,12 +6,11 @@ date: 2017-10-30
 comments: false
 ---
 
-
 <center>About <a href="http://pl4gue.github.io"><b> Me</b></a></center>
 
 #### I am currently a high school student at <a href="http://www.hansenberg.de"> Internatsschule Schloss Hansenberg</a>, Germany, and I love programming and sport.
 
-<img align="right" src="https://user-images.githubusercontent.com/14792027/27805696-db71abe2-6053-11e7-8d1e-b009178cff14.png" width=200 hspace=30 >
+<img class="profile-photo" src="/assets/img/pb.jpg" >
 
 ## What I do
 In my freetime, I mainly do programming, sport and freelancing.
