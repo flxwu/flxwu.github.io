@@ -16,7 +16,9 @@ I am currently living and studying at _Internatsschule Schloss Hansenberg_, a bo
 
 ## What I do
 <img class="profile-photo" src="/assets/img/pb.jpg" >
-My favorite activities are programming, reading web articles and sport. I like thinking out-of-the-box and love trying and learning new things, and I believe that having fun is the most important thing in life.
+My favorite activities are programming, reading web articles and sport.
+
+I like thinking out-of-the-box and love trying and learning new things, and I believe that having fun is the most important thing in life. 
 
 Currently, I am diving into the deep world of **Android programming**, including _Responsive UI_, _Android/Mobile Software Engineering Concepts_, _Dependency Injection_, _Reactive Programming_ and much more. My major programming language is _Java_, but I also master _Python_ and a bit of _C#, C++,_ and _Kotlin,_ as well basic front-end web programming.
 
