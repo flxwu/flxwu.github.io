@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-tags: [about, Jekyll]
+tags: [about, programming, upwork]
 date: 2017-10-30
 comments: false
 ---
@@ -18,8 +18,3 @@ Currently, I am diving into the deep world of Android programming. Java is my ma
 
 
 I offer my software development services, alongside with flawless and high-quality transcription, translation and writing services on **<a href="https://www.upwork.com/o/profiles/users/_~01d2548e2afe99f870/"><b>UpWork</b></a>.**
-
-
-
-## Annotation
-Thanks to <a href="https://github.com/TaylanTatli/">Taylan Tatli</a> for providing this wonderful <a href="https://github.com/jekyll/jekyll">Jekyll</a> theme! Check it out on <a href="https://github.com/TaylanTatli/Moon">Github</a>.
