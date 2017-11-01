@@ -8,13 +8,18 @@ comments: false
 
 <center>About <a href="http://pl4gue.github.io"><b> Me</b></a></center>
 
-#### I am currently a high school student at <a href="http://www.hansenberg.de"> Internatsschule Schloss Hansenberg</a>, Germany, and I love programming and sport.
+#### Hi! I am David , a high school student with a passion for programming and sports.</a>
+
+<hr>
+I am currently living and studying at _Internatsschule Schloss Hansenberg_, a boarding school in Germany. Check it out at <a href="http://www.hansenberg.de">www.hansenberg.de</a>
+<hr>
 
 ## What I do
 <img class="profile-photo" src="/assets/img/pb.jpg" >
-In my freetime, I mainly do programming, sport and freelancing.
+My favorite activities are programming, reading web articles and sport. I like thinking out-of-the-box and love trying and learning new things, and I believe that having fun is the most important thing in life.
 
-Currently, I am diving into the deep world of Android programming. Java is my main programming language, but I do also master Python and a bit of Kotlin, C++ and C#.
+Currently, I am diving into the deep world of **Android programming**, including _Responsive UI_, _Android/Mobile Software Engineering Concepts_, _Dependency Injection_, _Reactive Programming_ and much more. My major programming language is _Java_, but I also master _Python_ and a bit of _C#, C++,_ and _Kotlin,_ as well basic front-end web programming.
 
 
+### Hire me
 I offer my software development services, alongside with flawless and high-quality transcription, translation and writing services on **<a href="https://www.upwork.com/o/profiles/users/_~01d2548e2afe99f870/"><b>UpWork</b></a>.**
