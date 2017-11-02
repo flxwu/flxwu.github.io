@@ -116,7 +116,7 @@ hr {
 // images and figures
 img {
     display: block;
-	max-width: 100%;
+		max-width: 100%;
     width: auto;
     height: auto;
     vertical-align: middle;
@@ -127,11 +127,11 @@ img {
     image-rendering: optimizeQuality;
 }
 .img-circle {
-	border-radius: 50%;
-	border: 3px solid $white;
-	margin-top: 20px;
-	height: 150px;
-	width: 150px;
+		border-radius:10%;
+		border:3px solid #fff;
+		margin-top:20px;
+		height:130px;
+		width:170px;
 }
 .author-photo {
     background-color: $white;
