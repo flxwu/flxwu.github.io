@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Homework Manager"
-date:   2016-04-06
+date:   2017-11-04
 excerpt: "Hausaufgabenmanager mit Web und Android Interface und Nutzerdatenverwaltungssystem"
 project: true
 tag:
