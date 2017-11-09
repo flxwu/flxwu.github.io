@@ -25,10 +25,6 @@ layout: page
 | Continuous Integration 								|Very Basic  |
 
 
-<h2>Projects</h2>
+## Projects
 
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+- (Projects will be coming here)
