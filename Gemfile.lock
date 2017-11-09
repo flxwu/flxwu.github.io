@@ -254,6 +254,7 @@ DEPENDENCIES
   html-proofer
   jekyll-admin
   jekyll-redirect-from
+  jemoji
 
 BUNDLED WITH
    1.15.4
