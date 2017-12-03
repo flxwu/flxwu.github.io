@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create a CSS Animation</title>
+  </head>
+  <style>
+      p {
+      animation-duration: 3s;
+      animation-name: slidein;
+      font-weight: bold;
+      font-size: 2em;
+    }
+
+    @keyframes slidein {
+      from {
+        margin-left: 100%;
+        width: 300%;
+      }
+
+      to {
+        margin-left: 0%;
+        width: 100%;
+      }
+    }
+    body {
+        text-align: center;
+        padding: 150px;
+    }
+    article {
+        display: block;
+        text-align: left;
+        width: 650px;
+        margin: 0 auto;
+    }
+  </style>
+  <body>
+    <article>
+      <p> This is a basic slide-in CSS Animation using HTML5 and CSS. Made for <a href="https://codein.withgoogle.com/dashboard/task-instances/5529587872169984/"><em>Create a CSS Animation</em></a> Google Code-In task by JBoss Community</p>
+    </article>
+  </body>
+</html>
