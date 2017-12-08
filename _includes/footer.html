@@ -1,8 +1,35 @@
 <footer class="footer-main">
-    “<em>Genius is 1% inspiration, and 99% perspiration.</em>” ~ Thomas A. Edison <br><br>
-    © Copyright {{ site.time | date: '%Y' }} {{ site.name }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
-    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <p class="extra">
-        Handcrafted using a lot of <i class="em em-heart"></i> and  <a class="link" href="https://github.com/jekyll/jekyll">Jekyll</a>
-    </p>
+  <script>
+    function getJSONP(url, success) {
+
+        var ud = '_' + +new Date,
+            script = document.createElement('script'),
+            head = document.getElementsByTagName('head')[0]
+                   || document.documentElement;
+
+        window[ud] = function(data) {
+            head.removeChild(script);
+            success && success(data);
+        };
+
+        script.src = url.replace('callback=?', 'callback=' + ud);
+        head.appendChild(script);
+
+    }
+
+    getJSONP('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data){
+        document.getElementById("ip").innerHTML = "IP: "+ data.geoplugin_request;
+    });
+  </script>
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <p class="extra" id="ip">IP: Loading...</p>
+  “<em>Genius is 1% inspiration, and 99% perspiration.</em>” ~ Thomas A. Edison <br><br>
+  © Copyright {{ site.time | date: '%Y' }} {{ site.name }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank">
+      <svg class="icon icon-rss">
+        <use xlink:href="#icon-rss"></use>
+      </svg>
+    </a>
+  <p class="extra">
+      Handcrafted using a lot of <i class="em em-heart"></i> and  <a class="link" href="https://github.com/jekyll/jekyll">Jekyll</a>
+  </p>
 </footer>
