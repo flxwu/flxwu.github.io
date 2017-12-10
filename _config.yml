@@ -74,6 +74,7 @@ width: large
 projects: true
 about: true
 hire: true
+achievements: true
 #blog: true
 
 read-time: true
