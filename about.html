@@ -2,7 +2,6 @@
 title: About
 layout: page
 ---
-
 <img id="top" src="{{ site.url }}/{{ site.profile_picture }}" />
 <table align="center">
   <tr>
@@ -85,7 +84,7 @@ layout: page
     <h2>Software</h2>
     <span class="icons">
       <i class="devicon-atom-original-wordmark colored"></i>
-      <i class="devicon-pycharm-plain colored"></i>
+      <i><img style="width:7.5%;height:auto"src="/assets/images/about/travis.png"></i>
       <i class="devicon-intellij-plain-wordmark colored"></i>
       <i class="devicon-vim-plain colored"></i>
     </span>
@@ -210,4 +209,12 @@ layout: page
     <br>That's why I decided upon Linux and against a desktop environment.
   </p>
  </div>
- <p class="systeminfo"><a href="#top">Back to top</a></p>
+ <p class="systeminfo">
+   <a href="#top" id="backTop">Back to top</a>
+ </p>
+ <script>
+ $("#backTop").click(function(){
+   $("html, body").animate({ scrollTop: 0 }, 600);
+   return false;
+ });
+ </script>
