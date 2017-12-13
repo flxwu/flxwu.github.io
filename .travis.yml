@@ -2,7 +2,8 @@ language: ruby
 rvm:
 - 2.3.3
 
-install: gem install jekyll html-proofer
+install: 
+  gem install jekyll html-proofer && bundle install
 script: bundle exec jekyll build && htmlproofer ./_site
 
 # branch whitelist, only for GitHub Pages
