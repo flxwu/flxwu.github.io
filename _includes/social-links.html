@@ -12,8 +12,14 @@
     {% endif %}
 
     {% if site.snapchat %}
-        <a class="link" data-title="{{ site.snapchat }}" href="" target="_blank">
+        <a class="link" data-title="snapchat: {{ site.snapchat }}" href="" target="_blank">
             <svg class="icon icon-snapchat"><use xlink:href="#icon-snapchat"></use></svg>
+        </a>
+    {% endif %}
+
+    {% if site.ubuntuone %}
+        <a class="link" data-title="ubuntu store: {{ site.ubuntuone }}" href="https://uappexplorer.com/snaps?q=author%3ADavid&sort=-points" target="_blank">
+            <svg class="icon icon-ubuntu"><use xlink:href="#icon-ubuntu"></use></svg>
         </a>
     {% endif %}
 
