@@ -85,6 +85,8 @@ related: true
 # Display links for next and previous posts for the specified categories
 post-advance-links: [blog]
 
+exclude: [vendor]
+
 show-author: true
 animation: true
 
