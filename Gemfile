@@ -4,5 +4,4 @@ gem 'github-pages' , group: :jekyll_plugins
 gem 'html-proofer'
 gem 'jekyll-admin'
 gem 'jekyll-redirect-from'
-gem 'jemoji'
 gem 'rake'
