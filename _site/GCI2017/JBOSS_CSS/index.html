@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create a CSS Animation</title>
+  </head>
+  <style>
+      p {
+      animation-duration: 3s;
+      animation-name: animation;
+      font-weight: bold;
+      font-size: 2em;
+    }
+
+    @keyframes animation {
+      0%   {transform: rotate(0deg);}
+      100% {transform: rotate(-360deg);}
+      from {
+        margin-left: 50%;
+        color: red;
+        width: 300%;
+      }
+
+      to {
+        margin-left: 0%;
+        color: yellow;
+        width: 100%;
+      }
+    }
+    body {
+        text-align: center;
+        padding: 150px;
+    }
+    article {
+        display: block;
+        text-align: left;
+        width: 650px;
+        margin: 0 auto;
+    }
+  </style>
+  <body>
+    <article>
+      <p> This is a basic CSS Animation using HTML5 and CSS, with a slide-in, rotating and color-changing effect</p>
+      <p>Made for <a href="https://codein.withgoogle.com/dashboard/task-instances/5529587872169984/"><em>Create a CSS Animation</em></a> Google Code-In task by <a href="https://gci.jboss-outreach.org/">JBoss Community</a></p>
+    </article>
+  </body>
+</html>
