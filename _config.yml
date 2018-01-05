@@ -21,20 +21,20 @@ permalink: /:title/
 analytics-google: 'UA-109087116-1'
 
 disqus:
-  shortname: pl4gue 
-  categories: [blog, project] 
+  shortname: pl4gue
+  categories: [blog, project]
 
 twitter: pl4gue_dwu
-# google: pl4gue
-# linkedin: mylinkedin
+google: pl4gue
+linkedin: felix-wu-de
 # spotify: david10608
 snapchat: daviidwu
 ubuntuone: pl4gue
 github: pl4gue
-# stackoverflow: 7044681/mystackoverflow
-# quora: userquora
+stackoverflow: 5743084/pl4gue
+quora: David-Wu-283
 # reddit: username
-# medium: medium
+medium: pl4gue
 email: david10608@gmail.com
 
 authors:
