@@ -3,17 +3,13 @@ title: David Wu
 name: David Wu
 bio: German High School Student, Java,Android,Python&JS Enthusiast, GNU/Linux Lover, <a href="https://twitter.com/tophuntsdaily/status/948501939750424578">ProductHunt Top Maker @30secondsofcode</a>, <a href="https://de.udacity.com/">Android Scholar @Udacity</a>, Sports Fanatic
 bioplain: German High School Student, Java,Android,Python&JS Enthusiast, GNU/Linux Lover, ProductHunt Top Maker @30secondsofcode, Android Scholar @Udacity, Sports Fanatic
-# twitter summary info
 description: David Wu
 
-# if it's an external image, update below for true
-# better with square images
 external-image: false
 picture: assets/images/profile.jpg
 profile_picture: assets/images/pb.jpg
 
-# If you want to include your resume, set to true
-# and specify source (external or local).
+
 resume: true
 resume-external: false
 resume-url: docs/cv
@@ -22,37 +18,23 @@ url: http://david-wu.me/
 
 permalink: /:title/
 
-# To enable google analytics, supply your token below
 analytics-google: 'UA-109087116-1'
 
-# To enable piwik tracking, supply your url & site ID below
-# analytics-piwik-url: 'piwik.my-host.com'
-# analytics-piwik-id: 1
-
-# if you don't want comments in your posts, leave categories empty
 disqus:
-  shortname: pl4gue # enter this from your disqus account
-  categories: [blog, project] # only show disqus for posts that have these categories
+  shortname: pl4gue 
+  categories: [blog, project] 
 
-# if you don't have any of social below, comment the line
-#facebook: myfacebook
 twitter: pl4gue_dwu
-# google: mygoogle
-# instagram: myinstagram
-# pinterest: mypinterest
+# google: pl4gue
 # linkedin: mylinkedin
-# youtube: myyoutube
-#spotify: david10608
+# spotify: david10608
 snapchat: daviidwu
 ubuntuone: pl4gue
 github: pl4gue
-# lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
 # reddit: username
-#medium: medium
-# vimeo: myvimeo
-# lanyrd: mylanyrd
+# medium: medium
 email: david10608@gmail.com
 
 authors:
@@ -63,12 +45,10 @@ authors:
         picture: assets/images/logo_square.png
         twitter: pl4gue_dwu
 
-# do you want a larger site? change the option below
 # options: [normal, large] | default: normal
 # normal = 560px / large = 810px
 width: large
 
-# if you don't need pagination, comment the *paginate* configs below
 # paginate: 5
 # paginate_path: "blog/:num/"
 
