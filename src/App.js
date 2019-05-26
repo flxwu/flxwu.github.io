@@ -1,52 +1,55 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import Particle from './utils/Particles';
 import './styles/App.scss';
 
 let mouse = { x: 0, y: 0 };
-const particles = [];
+let particles = [];
 let ctx;
 let cw, ch;
 
 function App() {
   let canvas = React.createRef();
-  function particleRender() {
+
+  const particleRender = useCallback(() => {
     requestAnimationFrame(particleRender);
     ctx.clearRect(0, 0, cw, ch);
     for (const p of particles) p.render(mouse);
-  }
+  }, []);
 
-  function initCanvas() {
+  const initCanvas = useCallback(() => {
     ctx = canvas.current.getContext('2d');
-    cw = canvas.current.width;
-    ch = canvas.current.height;
-    ctx.clearRect(0, 0, cw, ch);
+      cw = canvas.current.width;
+      ch = canvas.current.height;
+      ctx.clearRect(0, 0, cw, ch);
 
-    ctx.font = 'bold ' + cw / 7 + 'px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Felix Wu', cw / 2.5, ch / 2);
+      ctx.font = 'bold ' + cw / 7 + 'px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Felix Wu', cw / 2.5, ch / 2);
 
-    var data = ctx.getImageData(0, 0, cw, ch).data;
-    ctx.clearRect(0, 0, cw, ch);
-    ctx.globalCompositeOperation = 'screen';
+      const data = ctx.getImageData(0, 0, cw, ch).data;
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.globalCompositeOperation = 'screen';
+      particles = [];
 
-    for (var i = 0; i < cw; i += Math.round(cw / 200)) {
-      for (var j = 0; j < ch; j += Math.round(cw / 200)) {
-        if (data[(i + j * cw) * 4 + 3] > 150) {
-          particles.push(new Particle(i, j, cw, ch, ctx, mouse));
+      for (let i = 0; i < cw; i += Math.round(cw / 200)) {
+        for (let j = 0; j < ch; j += Math.round(cw / 200)) {
+          if (data[(i + j * cw) * 4 + 3] > 150) {
+            particles.push(new Particle(i, j, cw, ch, ctx, mouse));
+          }
         }
       }
-    }
-  }
+  }, [canvas]);
 
   useEffect(() => {
-    window.addEventListener('resize', initCanvas);
+    console.log('in effect');
+    window.addEventListener('resize',initCanvas);
     window.addEventListener('mousemove', e => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     });
     initCanvas();
     requestAnimationFrame(particleRender);
-  });
+  }, [canvas, initCanvas, particleRender]);
 
   return (
     <div className="App">
