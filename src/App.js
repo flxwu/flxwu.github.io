@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss';
+import FloatingLetters from './components/Floatingletters';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <span className="App-1">
+        <span>
+          Hey there <i className="ec ec-wave" />
+        </span>
+        <span>
+          <span className="small">I'm</span>
+          <FloatingLetters>Felix Wu</FloatingLetters>
+        </span>
+      </span>
     </div>
   );
 }

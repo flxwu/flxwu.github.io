@@ -1,0 +1,20 @@
+.floating {
+	margin-top: -4rem;
+	font-family: Mandali;
+	font-size: 8rem;
+	opacity: 0.6;
+	letter-spacing: -5px;
+	
+	.letter {
+		.hover {
+			-webkit-animation: hoveranimation ease 3s;
+			animation: hoveranimation ease 3s;
+		}
+	
+		@keyframes hoveranimation {
+			50% {
+				transform: translateY(-50px);
+			}
+		}
+	}
+}
