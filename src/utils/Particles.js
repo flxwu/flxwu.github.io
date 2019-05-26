@@ -32,7 +32,7 @@ class Particle {
     const dx = Math.abs(this.x - mouse.x);
     const dy = Math.abs(this.y - mouse.y);
     const distance = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
-    if (distance < 100) {
+    if (distance < 150) {
       this.accX = (this.x - mouse.x) / 100;
       this.accY = (this.y - mouse.y) / 100;
       this.vx += this.accX;

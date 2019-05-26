@@ -18,31 +18,31 @@ function App() {
 
   const initCanvas = useCallback(() => {
     ctx = canvas.current.getContext('2d');
-      cw = canvas.current.width;
-      ch = canvas.current.height;
-      ctx.clearRect(0, 0, cw, ch);
+    cw = canvas.current.width;
+    ch = canvas.current.height;
+    ctx.clearRect(0, 0, cw, ch);
 
-      ctx.font = 'bold ' + cw / 7 + 'px sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('Felix Wu', cw / 2.5, ch / 2);
+    ctx.font = 'bold ' + cw / 7 + 'px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Felix Wu', cw / 2.5, ch / 2);
 
-      const data = ctx.getImageData(0, 0, cw, ch).data;
-      ctx.clearRect(0, 0, cw, ch);
-      ctx.globalCompositeOperation = 'screen';
-      particles = [];
+    const data = ctx.getImageData(0, 0, cw, ch).data;
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.globalCompositeOperation = 'screen';
+    particles = [];
 
-      for (let i = 0; i < cw; i += Math.round(cw / 200)) {
-        for (let j = 0; j < ch; j += Math.round(cw / 200)) {
-          if (data[(i + j * cw) * 4 + 3] > 150) {
-            particles.push(new Particle(i, j, cw, ch, ctx, mouse));
-          }
+    for (let i = 0; i < cw; i += Math.round(cw / 200)) {
+      for (let j = 0; j < ch; j += Math.round(cw / 200)) {
+        if (data[(i + j * cw) * 4 + 3] > 100) {
+          particles.push(new Particle(i, j, cw, ch, ctx, mouse));
         }
       }
+    }
   }, [canvas]);
 
   useEffect(() => {
     console.log('in effect');
-    window.addEventListener('resize',initCanvas);
+    window.addEventListener('resize', initCanvas);
     window.addEventListener('mousemove', e => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -72,6 +72,12 @@ function App() {
           I'm an 18-year-old <span className="blue">Software Engineer</span>{' '}
           focussed on <span className="red">JavaScript</span> and{' '}
           <span className="yellow">Python</span>
+          <br style={{ lineHeight: '8vh' }} />
+          <i>
+            Find me on <a href="https://twitter.com/flxwu">Twitter</a>,{' '}
+            <a href="https://github.com/flxwu">GitHub</a> or{' '}
+            <a href="https://www.linkedin.com/in/felix-wu-de/">LinkedIn</a>
+          </i>
         </div>
       </div>
     </div>
