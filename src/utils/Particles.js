@@ -6,18 +6,30 @@ class Particle {
     this.x = Math.random() * ww;
     this.y = Math.random() * wh;
     this.dest = { x, y };
+    this.dx = (this.dest.x - this.x) >= 0;
+    this.dy = (this.dest.y - this.y) >= 0;
     this.r = Math.random() * 2 + 2;
     this.vx = (Math.random() - 0.5) * 20;
     this.vy = (Math.random() - 0.5) * 20;
     this.accX = 0;
     this.accY = 0;
     this.friction = Math.random() * 0.05 + 0.94;
+    this.oFriction = this.friction;
+    this.throttle = Math.random() * 0.025 + 0.97;
     this.color = COLORS[Math.floor(Math.random() * 7)];
   }
 
   render(mouse) {
     this.accX = (this.dest.x - this.x) / 1000;
     this.accY = (this.dest.y - this.y) / 1000;
+    if ((this.dest.x - this.x >= 0) !== this.dx) {
+      this.friction *= this.throttle;
+      this.dx = !this.dx;
+    }
+    if ((this.dest.y - this.y >= 0) !== this.dy) {
+      this.friction *= this.throttle;
+      this.dy = !this.dy;
+    }
     this.vx += this.accX;
     this.vy += this.accY;
     this.vx *= this.friction;
@@ -37,6 +49,8 @@ class Particle {
       this.accY = (this.y - mouse.y) / 100;
       this.vx += this.accX;
       this.vy += this.accY;
+      this.friction = this.oFriction;
+      this.throttle = Math.random() * 0.025 + 0.965;
     }
   }
 }
