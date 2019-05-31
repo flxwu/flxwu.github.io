@@ -1,5 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import Particle from './utils/Particles';
+import COLORS from './utils/Colors';
 import './styles/App.scss';
 
 let mouse = { x: 0, y: 0 };
@@ -28,13 +29,13 @@ function App() {
 
     const data = ctx.getImageData(0, 0, cw, ch).data;
     ctx.clearRect(0, 0, cw, ch);
-    ctx.globalCompositeOperation = 'screen';
+    // ctx.globalCompositeOperation = 'screen';
     particles = [];
 
     for (let i = 0; i < cw; i += Math.round(cw / 200)) {
       for (let j = 0; j < ch; j += Math.round(cw / 200)) {
         if (data[(i + j * cw) * 4 + 3] > 100) {
-          particles.push(new Particle(i, j, cw, ch, ctx, mouse));
+          particles.push(new Particle(i, j, cw, ch, ctx, 'text'));
         }
       }
     }
@@ -42,12 +43,50 @@ function App() {
 
   useEffect(() => {
     console.log('in effect');
+    // particle shapes
+    window.addEventListener('click', e => {
+      const shapeID = 2;
+      // const shapeID = Math.floor(Math.random() * 3);
+      // eslint-disable-next-line default-case
+      switch (shapeID) {
+        case 0: {
+          // triangle
+
+          break;
+        }
+        case 1: {
+          // rectangle
+          break;
+        }
+        case 2: {
+          // circle
+          const [x, y] = [e.clientX, e.clientY];
+          const r = Math.random() * 25 + 55;
+          let color = COLORS[Math.floor(Math.random() * 5)];
+          for (let i = x - r; i <= x + r; i += Math.round(ch / 150)) {
+            for (let j = y - r; j <= y + r; j += Math.round(ch / 150)) {
+              const dx = Math.abs(i - x),
+                dy = Math.abs(j - y);
+              if (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)) <= r) {
+                const p = new Particle(i, j, cw, ch, ctx, 'circle', color);
+                particles.push(p);
+              }
+            }
+          }
+          break;
+        }
+      }
+    });
+
+    // name particles
+
     window.addEventListener('resize', initCanvas);
     window.addEventListener('mousemove', e => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     });
     initCanvas();
+    // particles.push(new Particle(500,200,window.innerWidth, window.innerHeight, ctx, 'a'))
     requestAnimationFrame(particleRender);
   }, [canvas, initCanvas, particleRender]);
 

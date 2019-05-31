@@ -1,14 +1,15 @@
 import COLORS from './Colors';
 
 class Particle {
-  constructor(x, y, ww, wh, ctx) {
+  constructor(x, y, ww, wh, ctx, purpose, color) {
     this.ctx = ctx;
     this.x = Math.random() * ww;
     this.y = Math.random() * wh;
     this.dest = { x, y };
-    this.dx = (this.dest.x - this.x) >= 0;
-    this.dy = (this.dest.y - this.y) >= 0;
-    this.r = Math.random() * 2 + 2;
+    this.dx = (this.dest.x - this.x >= 0);
+    this.dy = (this.dest.y - this.y >= 0);
+    this.r =
+      purpose === 'text' ? Math.random() * 2 + 2 : Math.random() * 1.5 + 1.5;
     this.vx = (Math.random() - 0.5) * 20;
     this.vy = (Math.random() - 0.5) * 20;
     this.accX = 0;
@@ -16,7 +17,8 @@ class Particle {
     this.friction = Math.random() * 0.05 + 0.94;
     this.oFriction = this.friction;
     this.throttle = Math.random() * 0.025 + 0.97;
-    this.color = COLORS[Math.floor(Math.random() * 7)];
+    this.color = color || COLORS[Math.floor(Math.random() * 5)];
+    this.purpose = purpose;
   }
 
   render(mouse) {
