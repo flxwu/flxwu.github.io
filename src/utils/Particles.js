@@ -21,6 +21,11 @@ class Particle {
     this.purpose = purpose;
   }
 
+  remove() {
+    this.dest.x = -9999;
+    this.dest.y = -9999;
+  }
+
   render(mouse) {
     this.accX = (this.dest.x - this.x) / 1000;
     this.accY = (this.dest.y - this.y) / 1000;

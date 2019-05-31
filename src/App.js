@@ -5,8 +5,10 @@ import './styles/App.scss';
 
 let mouse = { x: 0, y: 0 };
 let particles = [];
+let shapes = [];
 let ctx;
 let cw, ch;
+let shapeCnt = 0;
 
 function App() {
   let canvas = React.createRef();
@@ -14,7 +16,13 @@ function App() {
   const particleRender = useCallback(() => {
     requestAnimationFrame(particleRender);
     ctx.clearRect(0, 0, cw, ch);
+    let allshapesgone = true;
     for (const p of particles) p.render(mouse);
+    for (const p of shapes) {
+      p.render(mouse);
+      if (p.x >= 0 || p.y >= 0) allshapesgone = false;
+    }
+    if (allshapesgone) shapes = [];
   }, []);
 
   const initCanvas = useCallback(() => {
@@ -45,8 +53,15 @@ function App() {
     console.log('in effect');
     // particle shapes
     window.addEventListener('click', e => {
-      const shapeID = 2;
-      // const shapeID = Math.floor(Math.random() * 3);
+      const [x, y] = [e.clientX, e.clientY];
+      const step = Math.round(ch / 150);
+      const shapeID = Math.floor(Math.random() * 4);
+      const color = COLORS[Math.floor(Math.random() * 5)];
+      shapeCnt++;
+      if (shapeCnt === 6) {
+        shapes.forEach(p => p.remove());
+        shapeCnt = 0;
+      }
       // eslint-disable-next-line default-case
       switch (shapeID) {
         case 0: {
@@ -54,22 +69,32 @@ function App() {
 
           break;
         }
-        case 1: {
+        case 2: {
           // rectangle
+          const rect = Math.random() > 0.5;
+          let width, height;
+          if (rect) {
+            width = Math.random() * 25 + 40;
+            height = Math.random() * 25 + 40;
+          } else {
+            width = height = Math.random() * 25 + 40;
+          }
+          for (let i = x - width / 2; i <= x + width / 2; i += step)
+            for (let j = y - height / 2; j <= y + height / 2; j += step)
+              shapes.push(new Particle(i, j, cw, ch, ctx, 'rect', color));
           break;
         }
-        case 2: {
+        case 3: {
           // circle
-          const [x, y] = [e.clientX, e.clientY];
           const r = Math.random() * 25 + 55;
-          let color = COLORS[Math.floor(Math.random() * 5)];
-          for (let i = x - r; i <= x + r; i += Math.round(ch / 150)) {
-            for (let j = y - r; j <= y + r; j += Math.round(ch / 150)) {
+
+          for (let i = x - r; i <= x + r; i += step) {
+            for (let j = y - r; j <= y + r; j += step) {
               const dx = Math.abs(i - x),
                 dy = Math.abs(j - y);
               if (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)) <= r) {
                 const p = new Particle(i, j, cw, ch, ctx, 'circle', color);
-                particles.push(p);
+                shapes.push(p);
               }
             }
           }
