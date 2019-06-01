@@ -15,7 +15,18 @@ body {
 canvas {
   position: absolute;
 }
-
+footer {
+  position: absolute;
+  bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-family: 'Lato';
+  font-size: 1rem;
+  span {
+    font-size: 0.8rem;
+  }
+}
 a {
   background: linear-gradient(
     to bottom,
@@ -28,9 +39,9 @@ a {
   color: #000;
   text-decoration: none;
   &:hover {
-		background-size: 4px 50px;
-		color: white;
-		transition: background-size 0.8s, color 0.4s linear;
+    background-size: 4px 50px;
+    color: white;
+    transition: background-size 0.8s, color 0.4s linear;
   }
 }
 

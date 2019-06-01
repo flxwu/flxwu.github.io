@@ -170,9 +170,9 @@ function App() {
           <span className="yellow">Python</span>
           <br style={{ lineHeight: '8vh' }} />
           <i>
-            Find me on <a href="https://twitter.com/flxwu">Twitter</a>,{' '}
-            <a href="https://github.com/flxwu">GitHub</a> or{' '}
-            <a href="https://www.linkedin.com/in/felix-wu-de/">LinkedIn</a>
+            Find me on <a href="https://twitter.com/flxwu">Twitter</a> and{' '}
+            <a href="https://github.com/flxwu">GitHub</a>
+            {/* or{' '} <a href="https://www.linkedin.com/in/felix-wu-de/">LinkedIn</a> */}
           </i>
           <br style={{ lineHeight: '5vh' }} />
           <span className="small">
@@ -180,6 +180,15 @@ function App() {
           </span>
         </div>
       </div>
+      <footer>
+        Made with <span className="ec ec-green-heart" /> in Germany.
+        <br />
+        <span>
+          Particles are coded from scratch in Vanilla JS - if you're curios
+          about them, checkout the code on{' '}
+          <a href="https://github.com/flxwu">Github</a>
+        </span>
+      </footer>
     </div>
   );
 }
