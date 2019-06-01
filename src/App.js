@@ -156,6 +156,10 @@ function App() {
         height={window.innerHeight}
       />
       <div className="App-1">
+        {/* <header className="text">
+          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
+        </header> */}
         <div>
           <span>
             Hey there <i className="ec ec-wave" />
@@ -170,9 +174,9 @@ function App() {
           <span className="yellow">Python</span>
           <br style={{ lineHeight: '8vh' }} />
           <i>
-            Find me on <a href="https://twitter.com/flxwu">Twitter</a> and{' '}
-            <a href="https://github.com/flxwu">GitHub</a>
-            {/* or{' '} <a href="https://www.linkedin.com/in/felix-wu-de/">LinkedIn</a> */}
+            Find me on <a href="https://twitter.com/flxwu">Twitter</a>,{' '}
+            <a href="https://github.com/flxwu">GitHub</a> or{' '}
+            <a href="https://www.linkedin.com/in/felix-wu-de/">LinkedIn</a>
           </i>
           <br style={{ lineHeight: '5vh' }} />
           <span className="small">
@@ -180,7 +184,7 @@ function App() {
           </span>
         </div>
       </div>
-      <footer>
+      <footer className="text">
         Made with <span className="ec ec-green-heart" /> in Germany.
         <br />
         <span>
