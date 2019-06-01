@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import Particle from './utils/Particles';
 import COLORS from './utils/Colors';
 import './styles/App.scss';
@@ -13,7 +13,7 @@ let shapeCnt = 0;
 function App() {
   let canvas = React.createRef();
 
-  const particleRender = useCallback(() => {
+  const particleRender = React.useCallback(() => {
     requestAnimationFrame(particleRender);
     ctx.clearRect(0, 0, cw, ch);
     let allshapesgone = true;
@@ -25,7 +25,7 @@ function App() {
     if (allshapesgone) shapes = [];
   }, []);
 
-  const initCanvas = useCallback(() => {
+  const initCanvas = React.useCallback(() => {
     ctx = canvas.current.getContext('2d');
     cw = canvas.current.width;
     ch = canvas.current.height;
@@ -37,7 +37,6 @@ function App() {
 
     const data = ctx.getImageData(0, 0, cw, ch).data;
     ctx.clearRect(0, 0, cw, ch);
-    // ctx.globalCompositeOperation = 'screen';
     particles = [];
 
     for (let i = 0; i < cw; i += Math.round(cw / 200)) {
@@ -49,7 +48,7 @@ function App() {
     }
   }, [canvas]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     console.log('in effect');
     // particle shapes
     window.addEventListener('click', e => {
@@ -57,16 +56,49 @@ function App() {
       const step = Math.round(ch / 150);
       const shapeID = Math.floor(Math.random() * 4);
       const color = COLORS[Math.floor(Math.random() * 5)];
+
+      // shape counter
       shapeCnt++;
-      if (shapeCnt === 6) {
+      if (shapeCnt === 8) {
         shapes.forEach(p => p.remove());
         shapeCnt = 0;
       }
+
       // eslint-disable-next-line default-case
       switch (shapeID) {
         case 0: {
-          // triangle
+          // triangle flood-filling
 
+          const v1 = {
+            // top
+            x,
+            y: y - Math.random() * 55 + 70
+          };
+          let dx = Math.random() * 155 + 100;
+          let dy = Math.random() * 75 + 80;
+          const v2 = {
+            // left
+            x: x - dx,
+            y: y + dy
+          };
+          const v3 = {
+            // right
+            x: x + dx,
+            y: y + dy
+          };
+
+          const invslopeLeft = (v2.x - v1.x) / (v2.y - v1.y);
+          const invslopeRight = (v3.x - v1.x) / (v3.y - v1.y);
+          let boundLeft = v1.x;
+          let boundRight = v1.x;
+
+          for (let y = v1.y; y <= v2.y; y += step * 1.25) {
+            for (let x = boundLeft; x <= boundRight; x += step * 1.25) {
+              shapes.push(new Particle(x, y, cw, ch, ctx, 'triangle', color));
+            }
+            boundLeft += invslopeLeft;
+            boundRight += invslopeRight;
+          }
           break;
         }
         case 2: {
@@ -79,8 +111,8 @@ function App() {
           } else {
             width = height = Math.random() * 25 + 40;
           }
-          for (let i = x - width / 2; i <= x + width / 2; i += step)
-            for (let j = y - height / 2; j <= y + height / 2; j += step)
+          for (let i = x - width / 2; i <= x + width / 2; i += step * 1.25)
+            for (let j = y - height / 2; j <= y + height / 2; j += step * 1.25)
               shapes.push(new Particle(i, j, cw, ch, ctx, 'rect', color));
           break;
         }
@@ -92,6 +124,7 @@ function App() {
             for (let j = y - r; j <= y + r; j += step) {
               const dx = Math.abs(i - x),
                 dy = Math.abs(j - y);
+              // check if in circle radius
               if (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)) <= r) {
                 const p = new Particle(i, j, cw, ch, ctx, 'circle', color);
                 shapes.push(p);
@@ -111,7 +144,6 @@ function App() {
       mouse.y = e.clientY;
     });
     initCanvas();
-    // particles.push(new Particle(500,200,window.innerWidth, window.innerHeight, ctx, 'a'))
     requestAnimationFrame(particleRender);
   }, [canvas, initCanvas, particleRender]);
 
@@ -142,6 +174,10 @@ function App() {
             <a href="https://github.com/flxwu">GitHub</a> or{' '}
             <a href="https://www.linkedin.com/in/felix-wu-de/">LinkedIn</a>
           </i>
+          <br style={{ lineHeight: '5vh' }} />
+          <span className="small">
+            Move your cursor over the text or click anywhere to interact
+          </span>
         </div>
       </div>
     </div>
