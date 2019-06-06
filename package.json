@@ -1,8 +1,8 @@
 {
-  "name": "flxwu.com",
+  "name": "felixwu.dev",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://flxwu.com",
+  "homepage": "https://felixwu.dev",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build && echo \"flxwu.com\" >> build/CNAME",
+    "predeploy": "yarn build && echo \"felixwu.dev\" >> build/CNAME",
     "deploy": "gh-pages -d build -b master"
   },
   "eslintConfig": {

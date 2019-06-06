@@ -1,12 +1,8 @@
 $mainColor: #a23b72;
+$break-large: 550px;
 body {
   margin: 0;
   color: $mainColor;
-}
-.text {
-  color: black;
-  font-size: 1rem;
-  font-family: 'Lato';  
 }
 header {
   position: absolute;
@@ -27,15 +23,6 @@ header {
 canvas {
   position: absolute;
 }
-footer {
-  position: absolute;
-  bottom: 2rem;
-  text-align: center;
-  width: 100%;
-  span {
-    font-size: 0.8rem;
-  }
-}
 a {
   background: linear-gradient(
     to bottom,
@@ -53,30 +40,71 @@ a {
     transition: background-size 0.8s, color 0.4s linear;
   }
 }
-
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 .App {
-  .App-1 {
-    padding: 5rem;
-    font-family: 'Ranga';
-    font-size: 3.5rem;
-    position: relative;
+  height: 100vh;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  grid-template-rows: 1fr 1.5fr 0.5fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  font-family: 'Ranga';
+  font-size: 3.5vw;
+  align-items: center;
+  .item-top {
+    grid-column: 1;
+    grid-row: 1;
+    @media screen and (max-width: $break-large) {
+      grid-column: 1 / 4;
+      text-align: center;
+    }
+  }
+  .item-mid {
+    grid-column: 3;
+    grid-row: 2;
+    @media screen and (max-width: $break-large) {
+      grid-column: 1 / 4;
+      text-align: center;
+    }
+    align-self: end;
+    font-size: 1.3rem;
+    font-family: 'Lato';
+    line-height: 1.75rem;
+    text-align: right;
+    color: black;
+    @media screen and (max-width: $break-large) {
+      font-size: 4vw;
+    }
     .small {
-      display: block;
-      font-size: 2rem;
+      font-size: 0.8rem;
     }
-    .bio {
-      text-align: right;
-      position: absolute;
-      right: 5rem;
-      margin-top: 13rem;
-      font-size: 1.3rem;
-      width: 30rem;
-      font-family: 'Lato';
-      line-height: 1.75rem;
-      color: black;
-      .small {
-        font-size: 0.8rem;
-      }
+  }
+  .item-bottom {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    align-self: center;
+    color: black;
+    font-size: 1rem;
+    font-family: 'Lato';
+    text-align: center;
+    padding: 0 5%;
+    span {
+      font-size: 0.8rem;
     }
+  }
+  .small {
+    display: block;
+    font-size: 2rem;
+  }
+  @media screen and (max-width: $break-large) {
+    padding: 0;
   }
 }

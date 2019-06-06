@@ -1,15 +1,16 @@
-import COLORS from './Colors';
+import { COLORS } from './index';
 
 class Particle {
-  constructor(x, y, ww, wh, ctx, purpose, color) {
+  constructor(x, y, ww, wh, ctx, purpose, constraints, color) {
     this.ctx = ctx;
     this.x = Math.random() * ww;
     this.y = Math.random() * wh;
     this.dest = { x, y };
-    this.dx = (this.dest.x - this.x >= 0);
-    this.dy = (this.dest.y - this.y >= 0);
+    this.dx = this.dest.x - this.x >= 0;
+    this.dy = this.dest.y - this.y >= 0;
     this.r =
-      purpose === 'text' ? Math.random() * 2 + 2 : Math.random() * 1.5 + 1.5;
+      purpose === 'text' ? (4/3) * constraints.particleSize() : constraints.particleSize();
+    if (window.innerWidth < 550) this.r *= 1.5;
     this.vx = (Math.random() - 0.5) * 20;
     this.vy = (Math.random() - 0.5) * 20;
     this.accX = 0;
@@ -29,11 +30,11 @@ class Particle {
   render(mouse) {
     this.accX = (this.dest.x - this.x) / 1000;
     this.accY = (this.dest.y - this.y) / 1000;
-    if ((this.dest.x - this.x >= 0) !== this.dx) {
+    if (this.dest.x - this.x >= 0 !== this.dx) {
       this.friction *= this.throttle;
       this.dx = !this.dx;
     }
-    if ((this.dest.y - this.y >= 0) !== this.dy) {
+    if (this.dest.y - this.y >= 0 !== this.dy) {
       this.friction *= this.throttle;
       this.dy = !this.dy;
     }
