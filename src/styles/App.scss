@@ -61,7 +61,7 @@ body,
   font-size: 3.5vw;
   align-items: center;
   .item-top {
-    grid-column: 1;
+    grid-column: 1 / 4;
     grid-row: 1;
     @media screen and (max-width: $break-large) {
       grid-column: 1 / 4;

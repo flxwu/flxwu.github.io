@@ -4,10 +4,11 @@
   "private": true,
   "homepage": "https://felixwu.dev",
   "dependencies": {
-    "node-sass": "^4.12.0",
+    "node-sass": "npm:sass",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "sass": "^1.57.1"
   },
   "scripts": {
     "start": "react-scripts start",
