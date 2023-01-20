@@ -1,10 +1,10 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Routes>
+      <Switch>
         <Route
           path="/bucket"
           component={() => {
@@ -14,7 +14,7 @@ function App() {
             return null;
           }}
         />
-      </Routes>
+      </Switch>
     </>
   );
 }
