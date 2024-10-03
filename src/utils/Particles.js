@@ -1,18 +1,24 @@
-import { COLORS } from './index';
+import { COLORS } from "./index.js";
 
 class Particle {
   constructor(x, y, ww, wh, ctx, purpose, constraints, color) {
     this.ctx = ctx;
-    this.x = Math.random() * ww;
-    this.y = Math.random() * wh;
+    this.x = (Math.sin(Math.random()) * ww) / 10 + x;
+    this.y = (Math.sin(Math.random()) * wh) / 10 + y;
     this.dest = { x, y };
+
     this.dx = this.dest.x - this.x >= 0;
     this.dy = this.dest.y - this.y >= 0;
+
     this.r =
-      purpose === 'text' ? (4/3) * constraints.particleSize() : constraints.particleSize();
+      purpose === "text"
+        ? (4 / 3) * constraints.particleSize()
+        : constraints.particleSize();
     if (window.innerWidth < 550) this.r *= 1.5;
-    this.vx = (Math.random() - 0.5) * 20;
-    this.vy = (Math.random() - 0.5) * 20;
+
+    this.vx = (Math.random() - 0.5) * 5;
+    this.vy = (Math.random() - 0.5) * 5;
+
     this.accX = 0;
     this.accY = 0;
     this.friction = Math.random() * 0.05 + 0.94;
@@ -44,10 +50,13 @@ class Particle {
     this.vy *= this.friction;
     this.x += this.vx;
     this.y += this.vy;
+
+    // draw particle
     this.ctx.fillStyle = this.color;
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
     this.ctx.fill();
+
     // distance mouse-particle
     const dx = Math.abs(this.x - mouse.x);
     const dy = Math.abs(this.y - mouse.y);

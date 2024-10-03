@@ -1,4 +1,4 @@
-$mainColor: #a23b72;
+$mainColor: #363232;
 $break-large: 550px;
 body {
   margin: 0;
@@ -19,6 +19,9 @@ header {
 }
 .yellow {
   background-color: rgba(255, 240, 71, 0.5);
+}
+.green {
+  background-color: rgba(82, 181, 108, 0.5);
 }
 canvas {
   position: absolute;
@@ -57,11 +60,11 @@ body,
   grid-template-rows: 1fr 1.5fr 0.5fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  font-family: 'Ranga';
+  font-family: 'Afacad Flux';
   font-size: 3.5vw;
   align-items: center;
   .item-top {
-    grid-column: 1;
+    grid-column: 1 / 4;
     grid-row: 1;
     @media screen and (max-width: $break-large) {
       grid-column: 1 / 4;
@@ -85,7 +88,7 @@ body,
       font-size: 4vw;
     }
     .small {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
   .item-bottom {
@@ -103,9 +106,30 @@ body,
   }
   .small {
     display: block;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   @media screen and (max-width: $break-large) {
     padding: 0;
   }
+}
+
+.floating {
+	margin-top: -4rem;
+	font-family: Mandali;
+	font-size: 8rem;
+	opacity: 0.6;
+	letter-spacing: -5px;
+	
+	.letter {
+		.hover {
+			-webkit-animation: hoveranimation ease 3s;
+			animation: hoveranimation ease 3s;
+		}
+		
+		@keyframes hoveranimation {
+			50% {
+				transform: translateY(-50px);
+			}
+		}
+	}
 }
