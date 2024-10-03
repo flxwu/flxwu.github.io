@@ -108,6 +108,9 @@ body,
     display: block;
     font-size: 1.5rem;
   }
+  .tiny {
+    font-size: 1rem;
+  }
   @media screen and (max-width: $break-large) {
     padding: 0;
   }
