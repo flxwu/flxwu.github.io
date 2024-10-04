@@ -4,8 +4,16 @@ import Post1 from "./post-1.mdx";
 
 const root = createRoot(document.querySelector("#root"));
 
+const posts = [
+  {
+    title: "Hello World",
+    url: "/blog/post-1",
+    views: 1000,
+  },
+];
+
 const Index = () => (
-  <main className="max-w-2xl font-mono m-auto mb-10 text-sm">
+  <main className="max-w-2xl font-mono m-auto mb-10 text-sm ">
     <header className="flex mb-5 md:mb-10 items-center">
       {/* <Logo /> */}
 
@@ -20,31 +28,26 @@ const Index = () => (
       </nav>
     </header>
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <li>
-        <a href={``}>
-          <span
-            className={`flex transition-[background-color] hover:bg-gray-100 dark:hover:bg-[#242424] active:bg-gray-200 dark:active:bg-[#222] border-y border-gray-200 dark:border-[#313131]
+      <h1 className="text-3xl font-bold underline mb-5">felix' writings</h1>
+      <ul className="w-full">
+        {posts.map((post) => (
+          <li>
+            <a href={post.url}>
+              <span
+                className={`flex transition-[background-color] hover:bg-gray-100 active:bg-gray-200 dark:active:bg-[#222] border-y border-gray-200 dark:border-[#313131]
               `}>
-            <span
-              className={`py-3 flex grow items-center ${
-                !firstOfYear ? "ml-14" : ""
-              }`}>
-              {firstOfYear && (
-                <span className="w-14 inline-block self-start shrink-0 text-gray-500 dark:text-gray-500">
-                  {year}
+                <span className={`py-3 flex grow items-center`}>
+                  <span className="grow text-gray-400">{post.title}</span>
+
+                  <span className="text-gray-500 dark:text-gray-500 text-xs">
+                    {post.viewsFormatted}
+                  </span>
                 </span>
-              )}
-
-              <span className="grow dark:text-gray-100">{post.title}</span>
-
-              <span className="text-gray-500 dark:text-gray-500 text-xs">
-                {post.viewsFormatted}
               </span>
-            </span>
-          </span>
-        </a>
-      </li>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </main>
 );
