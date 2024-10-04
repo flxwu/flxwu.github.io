@@ -1,6 +1,6 @@
-import { Particle, COLORS, constraints as con } from "./utils/index.js";
-import "./styles.scss";
+import { Particle, COLORS, defaultParticleConfig } from "./utils/index.js";
 import { timeString } from "./utils/time.js";
+import "./styles.scss";
 
 let mouse = { x: 0, y: 0 };
 let particles = [];
@@ -32,7 +32,9 @@ const initCanvas = () => {
   cw = canvas.width;
   ch = canvas.height;
   mobile = window.innerWidth < 550;
-  constraints = mobile ? con(cw, ch).mobile : con(cw, ch).desktop;
+  constraints = mobile
+    ? defaultParticleConfig(cw, ch).mobile
+    : defaultParticleConfig(cw, ch).desktop;
 
   setParticlesToCurrentTime();
 };
