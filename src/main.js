@@ -1,6 +1,7 @@
 import { Particle, COLORS, defaultParticleConfig } from "./utils/index.js";
 import { timeString } from "./utils/time.js";
 import "./styles.scss";
+import frame from "./frame.svg";
 
 let mouse = { x: 0, y: 0 };
 let particles = [];
@@ -47,25 +48,53 @@ const setParticlesToCurrentTime = () => {
   if (mobile) {
     ctx.fillText("hello!", ...constraints.nameCoords[0]);
   } else {
-    ctx.fillText(`${timeString()}`, ...constraints.nameCoords);
-  }
+    // ctx.fillText(`${timeString()}`, ...constraints.nameCoords);
+    var img = new Image();
+    img.src = frame;
+    img.onload = function () {
+      ctx.drawImage(
+        img,
+        100,
+        100,
+        window.innerWidth * 0.8,
+        window.innerHeight * 0.8
+      );
+      const data = ctx.getImageData(0, 0, cw, ch).data;
+      ctx.clearRect(0, 0, cw, ch);
+      const newParticles = [];
 
-  const data = ctx.getImageData(0, 0, cw, ch).data;
-  ctx.clearRect(0, 0, cw, ch);
-  const newParticles = [];
+      for (let i = 0; i < cw; i += constraints.nameStep) {
+        for (let j = 0; j < ch; j += constraints.nameStep) {
+          // ((y * width) + x) * 4 -> pixel index * bytes per pixel
+          const pixelIndex = (i + j * cw) * 4;
+          const red = data[pixelIndex];
+          const green = data[pixelIndex + 1];
+          const blue = data[pixelIndex + 2];
+          const alpha = data[pixelIndex + 3];
+          if (red == 255 && green == 255 && blue == 255) continue;
 
-  for (let i = 0; i < cw; i += constraints.nameStep) {
-    for (let j = 0; j < ch; j += constraints.nameStep) {
-      // check if pixel is not transparent
-      if (data[(i + j * cw) * 4 + 3] > 100) {
-        let p = particles.find((p) => p.dest.x === i && p.dest.y === j);
-        newParticles.push(
-          p || new Particle(i, j, cw, ch, ctx, "text", constraints)
-        );
+          if (alpha > 100) {
+            // avoid redrawing particles
+            let p = particles.find((p) => p.dest.x === i && p.dest.y === j);
+            newParticles.push(
+              p ||
+                new Particle(
+                  i,
+                  j,
+                  cw,
+                  ch,
+                  ctx,
+                  "text",
+                  constraints,
+                  `rgba(${red},${green},${blue},0.7)`
+                )
+            );
+          }
+        }
       }
-    }
+      particles = newParticles;
+    };
   }
-  particles = newParticles;
 };
 
 // particle shapes
